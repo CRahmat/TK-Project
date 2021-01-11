@@ -31,8 +31,9 @@ namespace TK_Project.ViewModels
         [Required(ErrorMessage = "Nama lengkap wajib diisi")]
         [Display(Name = "Full Name")]
         public string FullName { get; set; }
-        [EmailAddress(ErrorMessage = "Email address is not valid")]
+        [EmailAddress(ErrorMessage = "Alamat Email Tidak Valid")]
         [Required(ErrorMessage = "Alamat email wajib diisi")]
+        [Remote("IsValidEmail", "Account", HttpMethod = "POST", ErrorMessage = "Email Telah Terdaftar")]
         [Display(Name = "Alamat Email")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Kata sandi wajib diisi")]

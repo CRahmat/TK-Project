@@ -37,7 +37,7 @@ namespace TK_Project
             new { controller = "Administrator", action = "Dashboard", permalink = UrlParameter.Optional, page = UrlParameter.Optional });
 
             routes.MapRoute("RegisterAdmin",
-            "register-admin",
+            "registration-admin",
             new { controller = "Account", action = "RegisterAdmin", permalink = UrlParameter.Optional, page = UrlParameter.Optional });
             routes.MapRoute("RegisteredUser",
             "registered-user",
@@ -46,7 +46,7 @@ namespace TK_Project
             "login",
             new { controller = "Account", action = "Login", permalink = UrlParameter.Optional, page = UrlParameter.Optional });
             routes.MapRoute("Registration",
-                "register",
+                "registration",
                 new { controller = "Account", action = "Register", permalink = UrlParameter.Optional, page = UrlParameter.Optional });
             routes.MapRoute("RejectedStudents",
                 "rejected-students",

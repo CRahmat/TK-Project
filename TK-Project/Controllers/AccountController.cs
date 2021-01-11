@@ -78,7 +78,12 @@ namespace TK_Project.Controllers
             return Json(!db.Students.Any(x => x.NIK == NIK)
                 , JsonRequestBehavior.AllowGet);
         }
-  
+        [AllowAnonymous]
+        public JsonResult IsValidEmail(string email)
+        {
+            return Json(!db.Administrators.Any(x => x.Email == email)
+                , JsonRequestBehavior.AllowGet);
+        }
         //
         // POST: /Account/Login
         [HttpPost]
