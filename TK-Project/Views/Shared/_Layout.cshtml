@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title -->
+    <title>@ViewBag.Title</title>
+
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/assets/images/icon/TK.ico">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap/offcanvas.css">
+    <!-- CSS Global Icons -->
+    <link rel="stylesheet" href="~/assets/vendor/icon-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/icon-line/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/assets/vendor/icon-etlinefont/style.css">
+    <link rel="stylesheet" href="~/assets/vendor/icon-line-pro/style.css">
+    <link rel="stylesheet" href="~/assets/vendor/icon-hs/style.css">
+    <link rel="stylesheet" href="~/assets/vendor/animate.css">
+    <link rel="stylesheet" href="~/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="~/assets/vendor/hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/dzsparallaxer/dzsparallaxer.css">
+    <link rel="stylesheet" href="~/assets/vendor/dzsparallaxer/dzsscroller/scroller.css">
+    <link rel="stylesheet" href="~/assets/vendor/dzsparallaxer/advancedscroller/plugin.css">
+    <link rel="stylesheet" href="~/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="~/assets/vendor/fancybox/jquery.fancybox.css">
+
+
+    <!-- CSS Unify -->
+    <link rel="stylesheet" href="~/assets/css/unify-components.css">
+    <link rel="stylesheet" href="~/assets/css/unify-globals.css">
+    <link rel="stylesheet" href="~/assets/css/unify-core.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+    @RenderSection("styles", required: false)
+
+</head>
+<body>
+    <main>
+        <!-- Header -->
+        <header id="js-header" class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance" data-header-fix-moment="300">
+            <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-8" data-header-fix-moment-exclude="g-py-8" data-header-fix-moment-classes="u-shadow-v18 g-py-0">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <!-- Responsive Toggle Button -->
+                        <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                            <span class="hamburger hamburger--slider">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <!-- End Responsive Toggle Button -->
+                        <!-- Logo -->
+                        <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                            <img width="170" src="~/assets/images/logo/logo-header.png" alt="Image Description">
+                        </a>
+                        <!-- End Logo -->
+                        <!-- Navigation -->
+                        <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
+                            <ul id="js-scroll-nav" class="navbar-nav text-uppercase g-font-weight-700 g-font-size-11 g-pt-20 g-pt-0--lg ml-auto">
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="@Url.Action("Index", "Home")" class="js-go-to nav-link px-0 active">
+                                        Home <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="" data-target="#about-section" class="js-go-to nav-link px-0">
+                                        Tentang
+                                    </a>
+                                </li>
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="" data-target="#promo-section" class="js-go-to nav-link  px-0">
+                                        Visi Misi
+                                    </a>
+                                </li>
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="" data-target="#product-section" class="js-go-to nav-link px-0">
+                                        Galeri
+                                    </a>
+                                </li>
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="" data-target="#contact-section" class="js-go-to nav-link px-0">
+                                        Kontak Kami
+                                    </a>
+                                </li>
+                                @if (User.Identity.Name == "" || User.Identity.Name == null)
+                                {
+                            <li class="nav-item g-mx-20--lg">
+                                <a href="@Url.Action("Login", "Account")" class="nav-link px-0">
+                                    Login
+                                </a>
+                            </li>
+ }
+                        else
+                        {
+                            <li class="nav-item g-mx-20--lg">
+                                <a href="@Url.Action("Profile", "Home")" class="nav-link px-0">
+                                    Profil
+                                </a>
+                            </li>
+                                            <li class="nav-item g-mx-20--lg">
+                                                <a href="@Url.Action("LogOff", "Account")" class="nav-link px-0">
+                                                    Log Out
+                                                </a>
+                                            </li>
+}
+                            </ul>
+                        </div>
+                        <!-- End Navigation -->
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header -->
+        @RenderBody()
+        <footer class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 g-py-20">
+            <div class="container">
+                <!-- Copyright -->
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-12 g-mb-15 g-mb-0--md">
+                        <small class="g-font-size-default">
+                            2021 All right reserved. Development by
+                            <a class="g-color-white" href="#">KBTKIT Mutiara Hati Pedan</a>
+                        </small>
+                    </div>
+
+                    @*<div class="col-md-6">
+                            <ul class="list-inline text-md-right mb-0">
+                                <li class="list-inline-item">
+                                    <a class="u-icon-v2 u-icon-size--xs g-color-white-opacity-0_8 g-color-white--hover g-bg-primary--hover g-brd-white-opacity-0_2 g-brd-primary--hover rounded" href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="u-icon-v2 u-icon-size--xs g-color-white-opacity-0_8 g-color-white--hover g-bg-primary--hover g-brd-white-opacity-0_2 g-brd-primary--hover rounded" href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="u-icon-v2 u-icon-size--xs g-color-white-opacity-0_8 g-color-white--hover g-bg-primary--hover g-brd-white-opacity-0_2 g-brd-primary--hover rounded" href="#">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="u-icon-v2 u-icon-size--xs g-color-white-opacity-0_8 g-color-white--hover g-bg-primary--hover g-brd-white-opacity-0_2 g-brd-primary--hover rounded" href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>*@
+                </div>
+                <!-- End Copyright -->
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </main>
+    <!-- JS Global Compulsory -->
+    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="~/assets/vendor/jquery.easing/js/jquery.easing.js"></script>
+    <script src="~/assets/vendor/popper.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="~/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="~/assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
+    <script src="~/assets/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
+    <script src="~/assets/vendor/dzsparallaxer/advancedscroller/plugin.js"></script>
+    <script src="~/assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+
+    <!-- jQuery UI Core -->
+    <script src="~/assets/vendor/jquery-ui/jquery-ui.core.min.js"></script>
+
+
+    <!-- jQuery UI Helpers -->
+    <script src="~/assets/vendor/jquery-ui/ui/widgets/menu.js"></script>
+    <script src="~/assets/vendor/jquery-ui/ui/widgets/mouse.js"></script>
+    <!-- End jQuery UI Helpers -->
+    <!-- jQuery UI Widgets -->
+    <script src="~/assets/vendor/jquery-ui/ui/widgets/autocomplete.js"></script>
+    <!-- End jQuery UI Widgets -->
+    <!-- JS Unify -->
+    <script src="~/assets/js/hs.core.js"></script>
+    <script src="~/assets/js/components/hs.header.js"></script>
+    <script src="~/assets/js/helpers/hs.hamburgers.js"></script>
+    <script src="~/assets/js/components/hs.cubeportfolio.js"></script>
+    <script src="~/assets/js/components/hs.autocomplete-local-search.js"></script>
+    <script src="~/assets/style-switcher/vendor/cookiejs/jquery.cookie.js"></script>
+    <script src="~/assets/js/helpers/hs.shortcode-filter.js"></script>
+    <script src="~/assets/vendor/fancybox/jquery.fancybox.js"></script>
+    <script src="~/assets/js/components/hs.go-to.js"></script>
+
+    <!-- Show / Copy Code -->
+    <script src="~/assets/vendor/prism/prism.core.min.js"></script>
+    <script src="~/assets/vendor/slick-carousel/slick/slick.js"></script>
+    <script src="~/assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/assets/vendor/custombox/custombox.min.js"></script>
+    <script src="~/assets/js/components/hs.scroll-nav.js"></script>
+    <script src="~/assets/js/components/hs.scrollbar.js"></script>
+    <script src="~/assets/js/components/hs.counter.js"></script>
+    <script src="~/assets/js/components/hs.carousel.js"></script>
+    <script src="~/assets/js/components/hs.modal-window.js"></script>
+    <script src="~/assets/js/helpers/hs.modal-markup.js"></script>
+    <script src="~/assets/js/components/hs.markup-copy.js"></script>
+    <script src="~/assets/js/components/hs.tabs.js"></script>
+    <!-- JS Customization -->
+    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/vendor/sweetalert/sweetalert.min.js"></script>
+    <script src="~/assets/vendor/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="~/assets/vendor/sweetalert/sweetalert.css"></script>
+
+    <!-- JS Revolution Slider -->
+    <script src="~/assets/vendor/revolution-slider/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script src="~/assets/vendor/revolution-slider/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js"></script>
+
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            $.HSCore.components.HSCarousel.init('.js-carousel');
+
+            $('#carouselCus3').slick('setOption', 'responsive', [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 6
+                }
+            }, {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3
+                }
+            }, {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 3
+                }
+            }, {
+                breakpoint: 446,
+                settings: {
+                    slidesToShow: 2
+                }
+            }], true);
+
+            // initialization of go to section
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+
+            // initialization of counters
+            var counters = $.HSCore.components.HSCounter.init('[class*="js-counter"]');
+
+            // initialization of popups
+            $.HSCore.components.HSPopup.init('.js-fancybox');
+            $.HSCore.helpers.HSModalMarkup.init('.js-modal-markup');
+        });
+        $(window).on('load', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+            // initialization of autocomplet
+            $.HSCore.components.HSLocalSearchAutocomplete.init('#autocomplete1');
+
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
+            $.HSCore.components.HSScrollNav.init($('#js-scroll-nav'), {
+                duration: 700,
+                easing: 'easeOutExpo'
+            });
+            // initialization of cubeportfolio
+            $.HSCore.components.HSCubeportfolio.init('.cbp');
+
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

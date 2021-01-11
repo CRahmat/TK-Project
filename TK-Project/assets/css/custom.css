@@ -1,0 +1,99 @@
+/* Add here all your css styles (customizations) */
+.image-overlay-onhover {
+    position: relative;
+}
+
+    .image-overlay-onhover .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+    }
+
+    .image-overlay-onhover:hover .overlay {
+        opacity: 1;
+    }
+
+    .image-overlay-onhover .overlay .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+
+.img-responsive {
+    width: 100%;
+}
+
+.u-header__logo-img {
+    height: 55px;
+}
+
+.u-header__logo-img45 {
+    height: 45px;
+}
+
+.u-header__logo-img40 {
+    height: 36px;
+}
+
+.dz-message {
+    color: black;
+}
+
+.g-bottom-minus-40 {
+    bottom: -40px;
+}
+/*.table-header {
+    color: white;
+    background-color: #009efb;
+}*/
+.preloader {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    position: fixed;
+    z-index: 99999;
+    background: #fff;
+    opacity: 0.7;
+}
+
+    .preloader .cssload-speeding-wheel {
+        position: absolute;
+        top: calc(50% - 3.5px);
+        left: calc(50% - 3.5px);
+    }
+
+.loader {
+    border: 5px solid;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border-color: orange transparent transparent;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cursor-pointer:hover {
+    cursor: pointer;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(720deg);
+        filter: hue-rotate(720deg)
+    }
+}

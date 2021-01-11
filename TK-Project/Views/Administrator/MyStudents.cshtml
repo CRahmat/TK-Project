@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TK_Project.Models.Students>
+@{
+    ViewBag.Title = "Daftar Siswa Terdaftar - KBTKIT Mutiara Hati Pedan";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row page-titles">
+    <div class="col-md-6 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Daftar Siswa</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="@Url.Action("MyStudents")">Siswa</a></li>
+            <li class="breadcrumb-item active">Daftar Siswa Terdaftar</li>
+        </ol>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive m-t-40">
+            <table id="myTable" class="table table-bordered table-striped">
+                <thead class="table-header">
+                    <tr>
+                        <th>Nama</th>
+                        <th>NIK</th>
+                        <th>Nomor KK</th>
+                        <th>Nomor Akte</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.FullName</td>
+                        <td>@item.NIK</td>
+                        <td>@item.KKNumber</td>
+                        <td>@item.DeedNumber</td>
+                        @if (item.Gender == true)
+                        {
+                            <td>Laki-Laki</td>
+                        }
+                        else
+                        {
+                            <td>Perempuan</td>
+                        }
+                    <td>
+                        <a href="@Url.Action("DetailsStudent", new { id = @item.Id })" target="_blank" data-toggle="tooltip" data-original-title="Lihat Detail" class="btn btn-info">
+                            Detail
+                        </a>
+                    </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+
+    </script>
+}
+

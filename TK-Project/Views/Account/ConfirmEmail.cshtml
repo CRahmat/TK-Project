@@ -1,0 +1,87 @@
+﻿@model TK_Project.Models.Students
+@{
+    ViewBag.Title = "Konfirmasi Email - KBTKIT Mutiara Hati Pedan";
+    var banner = ViewBag.Banner1 ?? "/assets/images/backgrounds/background.jpg";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>SI-Dital - Register Confirmation</title>
+    <link href="~/assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/admin/css/style.css" rel="stylesheet">
+    <link href="~/assets/admin/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="~/assets/admin/css/admin.css" id="theme" rel="stylesheet">
+    <link href="~/assets/admin/css/custom.css" id="theme" rel="stylesheet">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <section id="wrapper" class="login-register login-sidebar" style="background-image:url(@banner);">
+        <div class="login-box card">
+            <div class="login-logo text-center db">
+                <img class="g-width-235" src="~/assets/images/logo/si-dital-logo.png" alt="Home" />
+            </div>
+            @*<div class="col-lg-3 col-md-4 col-sm-3 col-xs-12">
+                    <div class="ribbon-wrapper card">
+                        <div class="ribbon ribbon-corner ribbon-info"><i class="fa fa-heart"></i></div>
+                        <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                    </div>
+                </div>*@
+            <div class="d-none d-sm-block d-md-none">
+                <div class="h1" style="margin-bottom: 2rem"></div>
+            </div>
+            <div class="box bg-info text-center ribbon-corner ribbon-right ribbon-bottom ribbon-info  " style="width:300px; margin:auto; margin-top:-70px">
+                <div class="form-group m-t-10 text-white">
+                    <b class="text-center" style="font-weight:500">@ViewBag.Title</b><br />
+                    <hr class="color-white" />
+                    Silahkan Konfirmasi Pendaftaran Anda
+                    <br />
+                    <br />
+                    @Html.ActionLink("Konfirmasi", "ConfirmAccount", new { email = ViewBag.Email }, new { @class = "btn btn-warning text-white" })
+                    <br />
+                </div>
+            </div>
+            <div class="d-none d-sm-block d-md-none">
+                <div class="h1" style="margin-bottom: 6rem"></div>
+            </div>
+            <br />
+            <div style="margin-bottom: 8.5rem" class="h1"></div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </section>
+
+
+    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/assets/vendor/popper.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="~/assets/admin/js/jquery.slimscroll.js"></script>
+    <script src="~/assets/admin/js/waves.js"></script>
+    <script src="~/assets/admin/js/sidebarmenu.js"></script>
+    <script src="~/assets/vendor/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="~/assets/admin/js/custom.min.js"></script>
+</body>
+</html>
+
+
+

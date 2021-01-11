@@ -1,0 +1,211 @@
+﻿@model TK_Project.ViewModels.AddStudent
+@{
+    ViewBag.Title = "Pendaftaran Siswa - KBTKIT Mutiara Hati Pedan";
+    var banner1 = ViewBag.Banner1 ?? "/assets/images/backgrounds/background.jpg";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/assets/images/icon/TK.ico">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/icon-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/animate.css">
+
+    <!-- CSS Unify -->
+    <link rel="stylesheet" href="~/assets/css/unify-core.css">
+    <link rel="stylesheet" href="~/assets/css/unify-components.css">
+    <link rel="stylesheet" href="~/assets/css/unify-globals.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+</head>
+<body>
+    <main>
+        <section class="g-flex-centered g-bg-size-cover g-bg-pos-top-center" style="background-image: url(@banner1);">
+            <div class="container g-py-100 g-pos-rel g-z-index-1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-9 col-lg-12">
+                        <div class="g-bg-white rounded g-py-40 g-px-30">
+                            <header class="text-center mb-4">
+                                <h2 class="h2 g-color-black g-font-weight-600">Pendaftaran Peserta Didik Baru</h2>
+                            </header>
+                            @using (Html.BeginForm("RegisterStudent", "Home", FormMethod.Post, FormMethod.Post, new { @class = "form-horizontal  form-material", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-horizontal">
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            @Html.LabelFor(model => model.NIK, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.NIK, new { htmlAttributes = new { @class = "form-control", placeholder = "NIK" } })
+                                            @Html.ValidationMessageFor(model => model.NIK, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-6">
+                                            @Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Nama Lengkap" } })
+                                            @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-6">
+                                            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Confirm Password" } })
+                                            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-4">
+                                            @Html.LabelFor(model => model.KKNumber, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.KKNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Nomor Kartu Keluarga" } })
+                                            @Html.ValidationMessageFor(model => model.KKNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            @Html.LabelFor(model => model.DeedNumber, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.DeedNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Nomor Akte Kelahiran" } })
+                                            @Html.ValidationMessageFor(model => model.DeedNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            @Html.LabelFor(model => model.FamilyHead, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.FamilyHead, new { htmlAttributes = new { @class = "form-control", placeholder = "Nama Kepala Keluarga" } })
+                                            @Html.ValidationMessageFor(model => model.FamilyHead, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-4">
+                                            @Html.LabelFor(model => model.Districts, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.Districts, new { htmlAttributes = new { @class = "form-control", placeholder = "Kecamatan" } })
+                                            @Html.ValidationMessageFor(model => model.Districts, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            @Html.LabelFor(model => model.SubDistrict, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.SubDistrict, new { htmlAttributes = new { @class = "form-control", placeholder = "Kelurahan" } })
+                                            @Html.ValidationMessageFor(model => model.SubDistrict, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            @Html.LabelFor(model => model.RTRW, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.RTRW, new { htmlAttributes = new { @class = "form-control", placeholder = "RT/RW" } })
+                                            @Html.ValidationMessageFor(model => model.RTRW, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-12">
+                                            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", placeholder = "Alamat Lengkap, Nomor Rumah..." } })
+                                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", placeholder = "Kota" } })
+                                            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-6">
+                                            @Html.LabelFor(model => model.Province, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.Province, new { htmlAttributes = new { @class = "form-control", placeholder = "Provinsi" } })
+                                            @Html.ValidationMessageFor(model => model.Province, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            @Html.LabelFor(model => model.DOB, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control", placeholder = "dd-mm-yyyy" } })
+                                            @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="col-md-6">
+                                            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            <select class="form-control" name="Gender" id="Gender" required>
+                                                <option hidden value="">Jenis Kelamin</option>
+                                                <option value="true">Laki-Laki</option>
+                                                <option value="false">Perempuan</option>
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-12">
+                                            @Html.LabelFor(model => model.Citizenship, htmlAttributes: new { @class = "control-label g-color-gray-dark-v5" })
+                                            <select class="form-control" name="Citizenship" id="Citizenship" required>
+                                                <option hidden value="">Pilih Kewarganegaraan</option>
+                                                <option value="Indonesia">Indonesia</option>
+                                                <option value="Luar Negeri">Luar Negeri</option>
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.Citizenship, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="mb-5 mt-5">
+                                        <button class="btn btn-md btn-block u-btn-primary rounded g-py-13" type="submit">DAFTAR</button>
+                                    </div>
+                                    <!-- End Form -->
+
+                                    <footer class="text-center">
+                                        <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">
+                                            Sudah punya akun? <a class="g-font-weight-600" href="@Url.Action("Login","Account")">Login</a>
+                                        </p>
+                                    </footer>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="u-outer-spaces-helper"></div>
+    @section styles
+{
+        <link href="~/assets/vendor/sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="~/assets/css/unify-core.css">
+        <link rel="stylesheet" href="~/assets/css/unify-components.css">
+        <link rel="stylesheet" href="~/assets/css/unify-globals.css">
+        <link rel="stylesheet" href="~/assets/css/styles.op-event.css">
+        <!-- CSS Customization -->
+        <link rel="stylesheet" href="~/assets/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+    }
+    @section Scripts{
+        @Scripts.Render("~/bundles/jqueryval")
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
+        <script src="~/assets/vendor/sweetalert/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script src="~/assets/js/components/hs.masked-input.js"></script>
+        <script src="~/assets/vendor/jquery/jquery.min.js"></script>
+        <script src="~/assets/vendor/popper.min.js"></script>
+        <script src="~/assets/vendor/bootstrap/bootstrap.min.js"></script>
+        <script src="~/assets/vendor/styleswitcher/jQuery.style.switcher.js"></script>
+        <script>
+            $(document).on('ready', function () {
+                $.HSCore.components.HSMaskedInput.init('[data-mask]');
+            });
+        </script>
+        <script>
+            $(function () {
+                $('#DOB').datetimepicker({
+                    format: 'DD/MM/YYYY'
+                });
+            });
+        </script>
+    }
+
+
+</body>
+</html>

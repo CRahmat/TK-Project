@@ -1,0 +1,308 @@
+﻿@model IEnumerable<TK_Project.Models.Students>
+@{
+    ViewBag.Title = "KBTKIT Mutiara Hati Pedan";
+    var banner = ViewBag.Banner1 ?? "/assets/images/backgrounds/background.jpg";
+}
+<section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall" data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
+    <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-img-hero g-bg-black-opacity-0_3--after" style="height: 130%;background-image: url(@banner);"></div>
+    <div class="u-bg-overlay_iiner">
+        <div class="container g-color-white text-center g-flex-centered-item g-position-rel g-bg-cover__inner g-min-height-100vh">
+            <div class="row g-absolute-centered">
+                <div class="col-md-12">
+                    <h2 class="g-font-weight-700 g-font-size-30 text-uppercase">KBTKIT <span class="g-color-primary">MUTIARA HATI PEDAN</span></h2>
+                </div>
+                <div class="col-md-12">
+                    <p class="g-font-size-24">YAYASAN AN-NAHL PEDAN</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 g-pos-abs g-bottom-30 g-left-0 g-right-0">
+                    <a class="js-go-to btn u-btn-outline-white g-color-white g-bg-white-opacity-0_1 g-color-black--hover g-bg-white--hover g-font-weight-600 text-uppercase g-rounded-50 g-px-30 g-py-11" href="#" data-target="#promo-section"><i class="fa fa-angle-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about-section" class="g-bg-brown-opacity-0_1 bg-main-body">
+    <div class="container g-pt-100">
+        <div class="text-center g-mb-70">
+            <h2 class="h1 g-color-black g-font-weight-600">Tentang</h2>
+            <div class="d-inline-block g-width-30 g-height-2 g-bg-primary mb-2"></div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-lg-5 g-mb-30">
+                <div class="mb-5">
+                    <h2 class="h1 g-color-black g-font-weight-600 g-mb-35">
+                        <span class="g-color-primary">KBTKIT</span> MUTIARA<br>HATI PEDAN <br />
+                        <span class="g-color-primary">Yayasan An-Nahl Pedan</span>
+                    </h2>
+                    <p>Taman bermain dan KBTKIT Mutiara Hati Pedan</p>
+                    <p>Lembaga pendidikan pra-sekolah yang mengutamakan nilai-nilai islami dalam keseharian dan mencetak lulusan menjadi anak yang santun, mandiri, aktif, kreatif menuju tingkat siap belajar di Sekolah Dasar</p>
+                </div>
+                <a class="js-go-to btn u-btn-primary btn btn-xl u-btn-hover-v1-4 g-letter-spacing-0_5 text-uppercase g-rounded-50 g-py-12 g-px-30" href="@Url.Action("Register","Account")">DAFTAR SEKARANG</a>
+            </div>
+
+            <div class="col-lg-6 g-mb-30 d-none d-md-block">
+                <img class="img-fluid mb-4 g-width-300" src="~/assets/images/logo/TK-Logo.png" alt="Image Description">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="promo-section" class="container g-pt-100">
+    <div class="text-center g-mb-70">
+        <h2 class="h1 g-color-black g-font-weight-600">Visi & Misi</h2>
+        <div class="d-inline-block g-width-30 g-height-2 g-bg-primary mb-2"></div>
+        <p class="lead">KBTKIT Mutiara Hati Pedan adalah lembaga pendidikan pra-sekolah yang mengutamakan nilai-nilai islami dalam keseharian dan mencetak lulusan menjadi anak yang santun, mandiri, aktif, kreatif menuju tingkat siap belajar di Sekolah Dasar</p>
+    </div>
+    <div class="row">
+        <div class="col-md-3 g-mb-30">
+            <div class="d-none d-md-block">
+                <span class="u-icon-v3 g-color-primary g-bg-primary-opacity-0_1 rounded-circle g-mb-25">
+                    <i class="icon-education-089 u-line-icon-pro"></i>
+                </span>
+                <div class="d-inline-block g-width-70 g-height-2 g-bg-primary g-pos-rel g-top-5 g-right-minus-25 g-mr-minus-20"></div>
+            </div>
+            <h2 class="h5 g-color-black g-font-weight-600 mb-3">Visi</h2>
+            <p>Unggul dalam IMTAQ dan IPTEK</p>
+        </div>
+
+        <div class="col-md-6 g-mb-30">
+            <img class="img-fluid w-75" src="~/assets/images/gallery/visi-misi.png" alt="Image Description">
+        </div>
+
+        <div class="col-md-3 mt-auto g-mb-30">
+            <h2 class="h5 g-color-black g-font-weight-600 mb-3">Misi</h2>
+            <p>Mengembangkan seluruh aspek yang dibutuhkan dan menjadikan anak yang beriman & bertaqwa kepada Allah SWT</p>
+            <div class="d-none d-md-block">
+                <span class="u-icon-v3 g-color-brown g-bg-brown-opacity-0_1 rounded-circle g-mb-25">
+                    <i class="icon-education-088 u-line-icon-pro"></i>
+                </span>
+                <div class="d-inline-block g-width-70 g-height-2 g-bg-brown g-pos-rel g-top-4 ml-4 g-mr-minus-20"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="g-bg-primary-opacity-0_1">
+    <!-- Testimonials -->
+    <div class="container g-pt-70 g-pb-100">
+        <div id="carouselCus1" class="js-carousel g-px-50 g-px-200--lg"
+             data-infinite="true"
+             data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-45 g-height-45 g-font-size-30 g-color-main-light-v1 g-color-primary--hover"
+             data-arrow-left-classes="fa fa-angle-left g-left-0 g-left-40--lg g-mt-minus-50"
+             data-arrow-right-classes="fa fa-angle-right g-right-0 g-right-40--lg g-mt-minus-50"
+             data-nav-for="#carouselCus2">
+
+            <div class="js-slide text-center">
+                <blockquote class="g-color-text g-font-size-default g-font-size-18--md g-mb-30">Jauhilah dengki, karena dengki memakan amal kebaikan sebagaimana api memakan kayu bakar. </blockquote>
+                <h4 class="g-font-weight-700 g-font-size-15 g-mb-1">Nabi Muhammad SAW</h4>
+            </div>
+
+            <div class="js-slide text-center">
+                <blockquote class="g-color-text g-font-size-default g-font-size-18--md g-mb-30">Sabar memiliki dua sisi, sisi yang satu adalah sabar, sisi yang lain adalah bersyukur kepada Allah. </blockquote>
+                <h4 class="g-font-weight-700 g-font-size-15 g-mb-1">Ibnu Mas'ud</h4>
+            </div>
+
+            <div class="js-slide text-center">
+                <blockquote class="g-color-text g-font-size-default g-font-size-18--md g-mb-30">Raihlah ilmu, dan untuk meraih ilmu belajarlah untuk tenang dan sabar. </blockquote>
+                <h4 class="g-font-weight-700 g-font-size-15 g-mb-1">Umar bin Khatab</h4>
+            </div>
+        </div>
+        <!-- End Carousel -->
+    </div>
+    <!-- End Testimonials -->
+</section>
+<section id="product-section" class="g-bg-secondary bg-main-body g-py-100">
+    <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+            <div class="col g-py-30 g-pa-30--md">
+                <section class="g-bg-secondary">
+                    <div class="row justify-content-center text-center g-mb-50">
+                        <div class="col-lg-9">
+                            <h1 class="h2 g-color-black g-font-weight-600 mb-2">Galeri</h1>
+                            <div class="d-inline-block g-width-30 g-height-2 g-bg-primary mb-2"></div>
+                            <p class="lead mb-0">Beberapa Foto tentang kegiatan dan fasilitas yang ada di KBTKIT Mutiara Hati Pedan</p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div id="shortcode">
+                            <div class="shortcode-html">
+                                <!-- Cube Portfolio Blocks - Content -->
+                                <div class="cbp" data-controls="#filterControls" data-animation="quicksand" data-x-gap="30" data-y-gap="30" data-media-queries='[
+                                           {"width": 1500, "cols": 3},
+                                           {"width": 1100, "cols": 3},
+                                           {"width": 800, "cols": 3},
+                                           {"width": 480, "cols": 3},
+                                           {"width": 300, "cols": 1}
+                                         ]'>
+                                    <!-- Cube Portfolio Blocks - Item -->
+                                    <div class="cbp-item">
+                                        <div class="u-block-hover g-parent">
+                                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="~/assets/images/gallery/gallery-1.png" alt="Image description">
+                                            <div class="d-flex w-100 h-100 g-bg-black-opacity-0_1 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-20">
+                                                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                                                    <li class="list-inline-item">
+                                                        <a class="cbp-lightbox u-icon-v2 u-icon-size--sm g-brd-white g-color-black g-bg-white rounded-circle" href="~/assets/images/gallery/gallery-1.png">
+                                                            <i class="icon-communication-017 u-line-icon-pro"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Cube Portfolio Blocks - Item -->
+                                    <!-- Cube Portfolio Blocks - Item -->
+                                    <div class="cbp-item">
+                                        <div class="u-block-hover g-parent">
+                                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="~/assets/images/gallery/gallery-2.png" alt="Image description">
+                                            <div class="d-flex w-100 h-100 g-bg-black-opacity-0_1 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-20">
+                                                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                                                    <li class="list-inline-item">
+                                                        <a class="cbp-lightbox u-icon-v2 u-icon-size--sm g-brd-white g-color-black g-bg-white rounded-circle" href="~/assets/images/gallery/gallery-2.png">
+                                                            <i class="icon-communication-017 u-line-icon-pro"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Cube Portfolio Blocks - Item -->
+                                    <!-- Cube Portfolio Blocks - Item -->
+                                    <div class="cbp-item">
+                                        <div class="u-block-hover g-parent">
+                                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="~/assets/images/gallery/gallery-3.png" alt="Image description">
+                                            <div class="d-flex w-100 h-100 g-bg-black-opacity-0_1 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-20">
+                                                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                                                    <li class="list-inline-item">
+                                                        <a class="cbp-lightbox u-icon-v2 u-icon-size--sm g-brd-white g-color-black g-bg-white rounded-circle" href="~/assets/images/gallery/gallery-3.png">
+                                                            <i class="icon-communication-017 u-line-icon-pro"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Cube Portfolio Blocks - Item -->
+                                    <!-- Cube Portfolio Blocks - Item -->
+                                    <div class="cbp-item">
+                                        <div class="u-block-hover g-parent">
+                                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="~/assets/images/gallery/gallery-4.png" alt="Image description">
+                                            <div class="d-flex w-100 h-100 g-bg-black-opacity-0_1 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-20">
+                                                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                                                    <li class="list-inline-item">
+                                                        <a class="cbp-lightbox u-icon-v2 u-icon-size--sm g-brd-white g-color-black g-bg-white rounded-circle" href="~/assets/images/gallery/gallery-4.png">
+                                                            <i class="icon-communication-017 u-line-icon-pro"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Cube Portfolio Blocks - Item -->
+                                    <!-- Cube Portfolio Blocks - Item -->
+                                    <div class="cbp-item">
+                                        <div class="u-block-hover g-parent">
+                                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="~/assets/images/gallery/gallery-5.png" alt="Image description">
+                                            <div class="d-flex w-100 h-100 g-bg-black-opacity-0_1 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-20">
+                                                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                                                    <li class="list-inline-item">
+                                                        <a class="cbp-lightbox u-icon-v2 u-icon-size--sm g-brd-white g-color-black g-bg-white rounded-circle" href="~/assets/images/gallery/gallery-5.png">
+                                                            <i class="icon-communication-017 u-line-icon-pro"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Cube Portfolio Blocks - Item -->
+                                    <!-- Cube Portfolio Blocks - Item -->
+                                    <div class="cbp-item">
+                                        <div class="u-block-hover g-parent">
+                                            <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="~/assets/images/gallery/gallery-6.png" alt="Image description">
+                                            <div class="d-flex w-100 h-100 g-bg-black-opacity-0_1 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in u-block-hover__additional--fade u-block-hover__additional--fade-in g-pa-20">
+                                                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
+                                                    <li class="list-inline-item">
+                                                        <a class="cbp-lightbox u-icon-v2 u-icon-size--sm g-brd-white g-color-black g-bg-white rounded-circle" href="~/assets/images/gallery/gallery-6.png">
+                                                            <i class="icon-communication-017 u-line-icon-pro"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Cube Portfolio Blocks - Item -->
+                                </div>
+                                <!-- End Cube Portfolio Blocks - Content -->
+                            </div>
+
+                            <div class="shortcode-styles">
+                                <!-- CSS Implementing Plugins -->
+                                <link type="text/plain" rel="stylesheet" href="~/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css">
+                            </div>
+
+                            <div class="shortcode-scripts">
+                                <!-- JS Implementing Plugins -->
+                                <script type="text/plain" src="~/assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js">
+                                </script>
+
+                                <!-- JS Unify -->
+                                <script type="text/plain" src="~/assets/js/components/hs.cubeportfolio.js">
+                                </script>
+
+                                <!-- JS Plugins Init. -->
+                                <script type="text/plain">
+                                    $(document).on('ready', function () {
+                                    // initialization of cubeportfolio
+                                    $.HSCore.components.HSCubeportfolio.init('.cbp');
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <!-- End Show Code -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact-section" class="g-bg-primary-opacity-0_1">
+    <div class="text-center g-color-gray-light-v2 g-theme-bg-blue-dark-v1 g-py-80 g-mb-1">
+        <div class="row justify-content-center text-center g-mb-50">
+            <div class="col-lg-9">
+                <h1 class="h2 g-color-black g-font-weight-600 mb-2">Kontak Kami</h1>
+                <div class="d-inline-block g-width-30 g-height-2 g-bg-primary mb-2"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 g-px-15 g-py-30 g-py-0--md">
+                    <i class="icon-globe d-inline-block g-font-size-50 g-color-primary g-mb-20"></i>
+                    <h3 class="text-uppercase g-font-size-default g-color-black g-mb-5">Alamat</h3>
+                    <strong class="g-font-size-default g-color-black">Selan, Sobayan, Pedan, Klaten 757468</strong>
+                </div>
+
+                <div class="col-md-4 g-brd-top g-brd-top-none--md g-brd-left--md g-brd-primary g-px-15 g-py-30 g-py-0--md">
+                    <i class="icon-call-in d-inline-block g-font-size-50 g-color-primary g-mb-20"></i>
+                    <h3 class="text-uppercase g-font-size-default g-color-black g-mb-5">Nomor Telepon</h3>
+                    <strong class="g-font-size-default g-color-black">(0274) 557 6677</strong>
+                </div>
+                <div class="col-md-4 g-brd-top g-brd-top-none--md g-brd-left--md g-brd-primary g-px-15 g-py-30 g-py-0--md">
+                    <i class="icon-envelope d-inline-block g-font-size-50 g-color-primary g-mb-20"></i>
+                    <h3 class="text-uppercase g-font-size-default g-color-black g-mb-5">Email</h3>
+                    <a class="g-font-size-default g-color-black" href="mailto:info@unify.com"><strong>mutiarahatipedan.com</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<a class="js-go-to u-go-to-v2" href="#"
+   data-type="fixed"
+   data-position='{
+           "bottom": 15,
+           "right": 15
+         }'
+   data-offset-top="400"
+   data-compensation="#js-header"
+   data-show-effect="zoomIn">
+    <i class="hs-icon hs-icon-arrow-top"></i>
+</a>

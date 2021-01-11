@@ -1,0 +1,153 @@
+﻿@model TK_Project.Models.Students
+    @{ 
+        ViewBag.Title = "Profil - KBTKIT Mutiara Hati Pedan";
+        var backgroundFooter = ViewBag.BackgroundFooter ?? "/assets/images/backgrounds/background.jpg";
+    }
+<!DOCTYPE html>
+<html lang="en">
+<body class="u-bg-overlay g-bg-img-hero g-color-white g-bg-black-opacity-0_3--after text-center text-md-left" style="background-image: url(@backgroundFooter);">
+    <main class="g-py-20">
+        <section class="g-py-100">
+            <div class="container u-bg-overlay__inner">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card container">
+                                    <div class="card-body">
+                                        <h4 class="card-title  g-color-black g-font-weight-700 ">Informasi Profil @Model.FullName</h4>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">NIK</h6>
+                                                <p class="text-muted font-16">@Model.NIK</p>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Email Siswa</h6>
+                                                <p class="text-muted font-16">
+                                                    @if (Model.EmailConfirmed)
+                                                    {
+                                                        <span><font color="blue">@Model.Email</font></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span><font color="red">@Model.Email</font></span>
+                                                    }
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Nomor KK</h6>
+                                                <p class="text-muted font-16">@Model.KKNumber</p>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Nama Kepala Keluarga</h6>
+                                                <p class="text-muted font-16">@Model.FamilyHead</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Nomor Akte</h6>
+                                                <p class="text-muted font-16">@Model.DeedNumber</p>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Tanggal Lahir</h6>
+                                                <p class="text-muted font-16">@Model.DOB.ToString("dd MMMM yyyy")</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Jenis Kelamin</h6>
+                                                @if (Model.Gender == true)
+                                                {
+                                                    <p class="text-muted font-16">Laki-Laki</p>
+                                                }
+                                                else
+                                                {
+                                                    <p class="text-muted font-16">Perempuan</p>
+
+                                                }
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Kewarganegaraan</h6>
+                                                <p class="text-muted font-16">@Model.Citizenship</p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Provinsi</h6>
+                                                <p class="text-muted font-16">@Model.Province</p>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Kabupaten/Kota</h6>
+                                                <p class="text-muted font-16">@Model.City</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Kecamatan</h6>
+                                                <p class="text-muted font-16">@Model.Districts</p>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Kelurahan</h6>
+                                                <p class="text-muted font-16">@Model.SubDistrict</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">RT/RW</h6>
+                                                <p class="text-muted font-16">@Model.RTRW</p>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <h6 class="box-title  g-color-black g-font-weight-700">Alamat</h6>
+                                                <p class="text-muted font-16">@Model.Address</p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        @if (Model.Status == TK_Project.Models.Status.Approved)
+                                        {
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-md btn-success w-100">Pendaftaran Telah DiSetujui</button>
+                                            </div>
+                                        }
+                                        else if (Model.Status == TK_Project.Models.Status.Pending)
+                                        {
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-md btn-warning w-100">Menunggu Persetujuan</button>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-md btn-danger w-100">Pendaftaran DiTolak</button>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="g-height-30">
+
+            </div>
+        </section>
+        <!-- End Copyright Footer -->
+        <a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position='{
+     "bottom": 15,
+     "right": 15
+   }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
+            <i class="hs-icon hs-icon-arrow-top"></i>
+        </a>
+    </main>
+
+    <div class="u-outer-spaces-helper"></div>
+
+</body>
+
+</html>
+
+

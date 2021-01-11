@@ -1,0 +1,22 @@
+﻿<div id="adminSidebar">
+    <aside class="left-sidebar">
+        <div class="scroll-sidebar">
+            <div class="user-profile">
+                <div class="profile-img"> <img src="~/assets/images/logo/TK-Main.png" alt="user" /> </div>
+                @*<div class="profile-text">
+                    <a href="#" class="dropdown-toggle link u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="caret"></span></a>
+                    @Html.Partial("_LayoutAdminSidebarProfileMenu")
+                </div>*@
+            </div>
+            <nav class="sidebar-nav">
+                @Html.Partial("_LayoutAdminMenu")
+            </nav>
+        </div>
+        <div class="sidebar-footer">
+            <div class="d-flex justify-content-center">
+                <a href="@Url.Action("LogOff", "Account")" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            </div>
+        </div>
+    </aside>
+</div>
+

@@ -1,0 +1,264 @@
+﻿@model TK_Project.Models.Students
+
+@{
+    ViewBag.Title = "Detail Siswa - KBTKIT Mutiara Hati Pedan" + Model.FullName;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row page-titles">
+    <div class="col-md-6 col-8 align-self-center">
+        <h3 class="text-themecolor m-b-0 m-t-0">Data Siswa Atas Nama @Model.FullName</h3>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="@Url.Action("DetailsStudent")">Detail Siswa</a></li>
+            <li class="breadcrumb-item active">@Model.FullName</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Foto Profil</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-12">
+                        @if (Model.Avatar != null)
+                        {
+                            <img class="img-fluid w-100 center" src="@Model.Avatar" alt="Image Description">
+                        }
+                        else
+                        {
+                            <img class="img-fluid w-80 p-b-20" src="~/assets/images/default-user.png" alt="Image Description">
+                        }
+                    </div>
+                </div>
+                @if (Model.Status == TK_Project.Models.Status.Pending)
+                {
+                    <div class="row">
+                        <div class="col-6">
+                            <form class="form" method="post" id="ApproveRegistration" action="@Url.Action("ApproveRegistration")">
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Id)
+                                @if (Model.Status == TK_Project.Models.Status.Pending)
+                                {
+                                    <button type="submit" class="btn btn-md btn-warning w-100" value="Setujui Reservasi">Terima</button>
+                                }
+                            </form>
+                        </div>
+                        <div class="col-6">
+                            <form class="form" method="post" id="RejectRegistration" action="@Url.Action("RejectRegistration")">
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Id)
+                                @if (Model.Status == TK_Project.Models.Status.Pending)
+                                {
+                                    <button type="submit" class="btn btn-md btn-danger w-100" value="Setujui Reservasi">Tolak</button>
+                                }
+                            </form>
+                        </div>
+                    </div>
+                }
+                else if (Model.Status == TK_Project.Models.Status.Approved)
+                {
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-md btn-success w-100">Pendaftaran Telah DiSetujui</button>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-md btn-danger w-100">Pendaftaran DiTolak</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card p-b-20">
+            <div class="card-body">
+                <h4 class="card-title">Informasi Siswa</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h6 class="box-title">Nama Lengkap</h6>
+                        <p class="text-muted font-13">@Model.FullName</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="box-title">NIK</h6>
+                        <p class="text-muted font-13">@Model.NIK</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Email Siswa</h6>
+                        <p class="text-muted font-13">
+                            @if (Model.EmailConfirmed)
+                            {
+                                <span><font color="blue">@Model.Email</font></span>
+                            }
+                            else
+                            {
+                                <span><font color="red">@Model.Email</font></span>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Nomor KK</h6>
+                        <p class="text-muted font-13">@Model.KKNumber</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Nama Kepala Keluarga</h6>
+                        <p class="text-muted font-13">@Model.FamilyHead</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Nomor Akte</h6>
+                        <p class="text-muted font-13">@Model.DeedNumber</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Tanggal Lahir</h6>
+                        <p class="text-muted font-13">@Model.DOB.ToString("dd MMMM yyyy")</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Jenis Kelamin</h6>
+                        @if (Model.Gender == true)
+                        {
+                            <p class="text-muted font-13">Laki-Laki</p>
+                        }
+                        else
+                        {
+                            <p class="text-muted font-13">Perempuan</p>
+
+                        }
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Kewarganegaraan</h6>
+                        <p class="text-muted font-13">@Model.Citizenship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Alamat Siswa</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Provinsi</h6>
+                        <p class="text-muted font-13">@Model.Province</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Kabupaten/Kota</h6>
+                        <p class="text-muted font-13">@Model.City</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Kecamatan</h6>
+                        <p class="text-muted font-13">@Model.Districts</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Kelurahan</h6>
+                        <p class="text-muted font-13">@Model.SubDistrict</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="box-title">RT/RW</h6>
+                        <p class="text-muted font-13">@Model.RTRW</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="box-title">Alamat</h6>
+                        <p class="text-muted font-13">@Model.Address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section styles
+{
+    <link href="~/assets/css/style-ava.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/vendor/sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+}
+@section scripts
+    {
+    <script src="~/assets/vendor/sweetalert/sweetalert.min.js"></script>
+    <script src="~/assets/js/manage/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#ApproveRegistration").submit(function (e) {
+                e.preventDefault();
+                var data = $('#ApproveRegistration').serialize();
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("ApproveRegistration", "Administrator")',
+                    data: data,
+                    success: function (data) {
+                        if (data == "OK") {
+                            swal({
+                                title: "Sukses",
+                                text: "Pendaftaran Berhasil Di Setujui",
+                                type: "success",
+                                button: true,
+                            });
+                            setTimeout(function () {// wait for 5 secs(2)
+                                location.reload(); // then reload the page.(3)
+                            }, 2000); 
+                        } else {
+                            swal({
+                                title: "Terjadi Kesalahan",
+                                text: "Pendaftaran Gagal Di Setujui",
+                                type: "error"
+                            });
+                            setTimeout(function () {// wait for 5 secs(2)
+                                location.reload(); // then reload the page.(3)
+                            }, 2000); 
+                        }
+                    }
+                });
+            });
+            $("#RejectRegistration").submit(function (e) {
+                e.preventDefault();
+                var data = $('#RejectRegistration').serialize();
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("RejectRegistration", "Administrator")',
+                    data: data,
+                    success: function (data) {
+                        if (data == "OK") {
+                            swal({
+                                title: "Warning",
+                                text: "Pendaftaran Di Tolak",
+                                type: "success",
+                                button: true,
+                            });
+                            setTimeout(function () {// wait for 5 secs(2)
+                                location.reload(); // then reload the page.(3)
+                            }, 2000); 
+                        } else {
+                            swal({
+                                title: "Terjadi Kesalahan",
+                                text: "Pendaftaran Gagal Di Tolak",
+                                type: "error"
+                            });
+                            setTimeout(function () {// wait for 5 secs(2)
+                                location.reload(); // then reload the page.(3)
+                            }, 2000); 
+                        }
+                    }
+                });
+            });
+        });
+
+    </script>
+}

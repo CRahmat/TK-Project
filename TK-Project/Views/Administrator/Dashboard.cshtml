@@ -1,0 +1,72 @@
+﻿@model IEnumerable<TK_Project.Models.Students>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Admin - KBTKIT Mutiara Hati Pedan";
+}
+
+<head>
+    <script>
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartAllStudents", {
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                animationEnabled: true,
+                legend: {
+                    markerMargin : 8
+                },
+                data: [{
+                    cursor: "pointer",
+                    innerRadius: "75%",
+                    legendMarkerType: "square",
+                    name: "New vs Returning Visitors",
+                    radius: "100%",
+                    showInLegend: true,
+                    legendText: "{label} : {y} Siswa",
+                    indexLabel: "{null}",
+                    startAngle: 90,
+                    type: "pie",
+                    backgroundColor: "rgba(225,150,150,0.5)",
+                    padding: {
+                        bottom:5
+                    },
+                    dataPoints: @Html.Raw(ViewBag.DataPointAllStudent)
+	        }]
+            });
+            chart.render();
+        }
+    </script>
+</head>
+<section>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card card-inverse card-info">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="m-r-20 align-self-center">
+                            <h1 class="text-white"><i class="ti-pie-chart"></i></h1>
+                        </div>
+                        <div>
+                            <h3 class="card-title">Semua Siswa Yang Telah Mendaftar</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 align-self-center">
+                            <span class="display-6 text-white">@Model.Count()</span>
+                        </div>
+                        <div class="col-8 align-self-center">
+                            <div class="usage chartist-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-pie-chart" style="height: 400px">
+        <div class="col-md-12">
+            <div id="chartAllStudents"></div>
+        </div>
+    </div>
+</section>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+
