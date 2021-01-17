@@ -113,3 +113,4 @@ C:\Users\Catur Rahmat\source\repos\TK-Project\TK-Project\bin\MySql.Data.dll
 C:\Users\Catur Rahmat\source\repos\TK-Project\TK-Project\bin\MySql.Data.Entity.EF6.dll
 C:\Users\Catur Rahmat\source\repos\TK-Project\TK-Project\bin\MySql.Data.xml
 C:\Users\Catur Rahmat\source\repos\TK-Project\TK-Project\bin\MySql.Data.Entity.EF6.xml
+C:\Users\Catur Rahmat\source\repos\TK-Project\TK-Project\obj\Debug\TK-Project.csprojAssemblyReference.cache
